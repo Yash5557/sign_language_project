@@ -1,4 +1,6 @@
 {
+  "buildCommand": "chmod -R +x node_modules/.bin 2>/dev/null || true && vite build",
+  "outputDirectory": "dist",
   "rewrites": [
     {
       "source": "/(.*)",
