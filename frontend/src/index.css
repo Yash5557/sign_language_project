@@ -1,0 +1,1074 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Fira+Code:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   DARK ELECTRIC VIOLET & NEON PURPLE DESIGN SYSTEM
+   Inspired by: "Your AI-Powered Design Assistant" Reference Interface
+   1. Canvas & Surfaces:
+      - Deep Obsidian Base: #0B0B0E & #0E0E12
+      - Surface Panels & Cards: Deep Charcoal Glass #14141A / rgba(20, 20, 26, 0.85)
+      - Elevated / Featured Cards: #181822 with luminous violet hairline border
+   2. Purple Color Palette:
+      - Radiant Violet: #8B5CF6
+      - Electric Purple: #7C3AED
+      - Bright Lavender: #A855F7
+      - Soft Lavender: #C4B5FD
+      - Fuchsia Highlight: #C084FC
+   3. Distinct Button Stylings:
+      - .btn-get-started: Radiant solid violet pill button with purple glow
+      - .btn-hero-ghost: Frosted translucent glass pill button
+      - .btn-violet-solid: Solid vibrant violet pill
+      - .btn-gradient-indigo-violet: Indigo-to-purple gradient pill
+      - .btn-frosted-violet: Frosted purple glass outline pill
+      - .btn-charcoal: Sleek charcoal slate pill
+      - .btn-pitch-black: Obsidian dark pill button
+   ========================================================================== */
+
+:root {
+  /* Surfaces */
+  --bg-root: #0B0B0E;
+  --bg-surface: #111116;
+  --bg-card: rgba(20, 20, 28, 0.85);
+  --bg-card-hover: rgba(30, 30, 42, 0.95);
+  --bg-card-elevated: #181824;
+  --bg-terminal: #07070B;
+  --bg-header: rgba(11, 11, 14, 0.92);
+
+  /* Purples & Violets */
+  --accent-purple: #8B5CF6;
+  --accent-violet: #7C3AED;
+  --accent-fuchsia: #A855F7;
+  --accent-lavender: #C4B5FD;
+  --accent-light: #DDD6FE;
+  --accent-glow: rgba(139, 92, 246, 0.40);
+  --accent-gradient: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
+  --accent-gradient-hover: linear-gradient(135deg, #6D28D9 0%, #9333EA 100%);
+  --accent-gradient-indigo: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+  --accent-gradient-fuchsia: linear-gradient(135deg, #8B5CF6 0%, #D946EF 100%);
+
+  /* Hairline Borders */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-card: #23232E;
+  --border-hover: rgba(168, 85, 247, 0.45);
+  --border-active-purple: #8B5CF6;
+
+  /* Typography Colors */
+  --text-heading: #FFFFFF;
+  --text-body: #D4D4D8;
+  --text-secondary: #A1A1AA;
+  --text-metadata: #71717A;
+  --text-purple: #A855F7;
+
+  /* Status Badges */
+  --status-purple-bg: rgba(139, 92, 246, 0.15);
+  --status-purple-text: #C4B5FD;
+  --status-purple-border: rgba(168, 85, 247, 0.35);
+
+  --status-cyan-bg: rgba(139, 92, 246, 0.15);
+  --status-cyan-text: #C4B5FD;
+  --status-cyan-border: rgba(168, 85, 247, 0.35);
+
+  --status-slate-bg: rgba(255, 255, 255, 0.06);
+  --status-slate-text: #A1A1AA;
+  --status-slate-border: rgba(255, 255, 255, 0.12);
+
+  /* Fonts */
+  --font-sans: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Shadows */
+  --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.75), 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.85), 0 0 25px rgba(139, 92, 246, 0.30);
+  --shadow-purple-glow: 0 0 30px rgba(139, 92, 246, 0.40), inset 0 0 1px rgba(168, 85, 247, 0.8);
+
+  /* Backward Compatibility Aliases */
+  --bg-app: var(--bg-root);
+  --bg-card-dark: var(--bg-card);
+  --border-slate-subtle: var(--border-subtle);
+  --border-slate-hover: var(--border-hover);
+  --text-slate-main: var(--text-heading);
+  --text-slate-muted: var(--text-secondary);
+  --text-slate-dim: var(--text-metadata);
+  --accent-cyan: var(--accent-purple);
+  --accent-crimson: var(--accent-purple);
+  --accent-cobalt: var(--accent-purple);
+  --accent-royal: var(--accent-violet);
+  --status-emerald: var(--accent-purple);
+  --status-emerald-bg: var(--status-purple-bg);
+  --status-emerald-border: var(--status-purple-border);
+  --status-amber: #F59E0B;
+  --status-amber-bg: rgba(245, 158, 11, 0.15);
+  --status-amber-border: rgba(245, 158, 11, 0.30);
+  --status-rose: var(--accent-fuchsia);
+  --status-rose-bg: var(--status-purple-bg);
+  --status-rose-border: var(--status-purple-border);
+  --status-red-bg: var(--status-purple-bg);
+  --status-red-text: var(--status-purple-text);
+  --status-red-border: var(--status-purple-border);
+}
+
+/* ==========================================================================
+   GLOBAL RESET & CANVAS STYLING
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-root);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.14) 0%, transparent 55%),
+    radial-gradient(circle at 10% 35%, rgba(124, 58, 237, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 90% 75%, rgba(168, 85, 247, 0.07) 0%, transparent 50%);
+  background-attachment: fixed;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sleek Zero-Scrollbar Subtle Track */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0B0E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.65);
+}
+
+/* ==========================================================================
+   TYPOGRAPHY HIERARCHY
+   ========================================================================== */
+
+.slide-title,
+.main-title {
+  font-family: var(--font-sans);
+  font-size: clamp(28px, 2.6vw, 36px);
+  font-weight: 700;
+  color: var(--text-heading);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.section-header {
+  font-family: var(--font-sans);
+  font-size: clamp(16px, 1.5vw, 18px);
+  font-weight: 600;
+  color: var(--text-heading);
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
+
+.body-text {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text-body);
+  font-weight: 400;
+}
+
+.caption-text,
+.sublabel-text {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.metadata-text {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--text-metadata);
+  font-weight: 400;
+}
+
+/* Monospace Metrics, Numerical readouts & Tags */
+.code-metric,
+.data-tag {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: var(--accent-lavender);
+  background: rgba(24, 24, 34, 0.85);
+  border: 1px solid var(--border-subtle);
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Purple Gradient Highlight Text (like "Design Assistant" in reference) */
+.text-purple-highlight {
+  background: linear-gradient(135deg, #A855F7 0%, #C084FC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+.text-electric-gradient {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   BENTO GRID & CARD STYLING
+   ========================================================================== */
+
+.bento-card-dark,
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  /* rounded-2xl */
+  box-shadow: var(--shadow-card);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--text-body);
+  position: relative;
+}
+
+.bento-card-interactive {
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.bento-card-interactive:hover,
+.bento-card-interactive:focus-visible,
+.bento-card-interactive:focus-within {
+  border-color: #8B5CF6 !important;
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.45), 0 12px 35px rgba(0, 0, 0, 0.75) !important;
+  background: rgba(28, 22, 42, 0.92) !important;
+  transform: translateY(-4px);
+}
+
+.bento-card-interactive.active,
+.bento-card-highlighted {
+  border-color: var(--accent-purple) !important;
+  box-shadow: var(--shadow-purple-glow) !important;
+  background: rgba(28, 22, 42, 0.92) !important;
+}
+
+/* Circular/Rounded Purple Icon Bubble (as seen in reference features) */
+.icon-bubble-purple {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 4px 18px rgba(139, 92, 246, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+}
+
+/* Alternate square rounded bubble */
+.icon-bubble-square {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 4px 18px rgba(139, 92, 246, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   STATUS PILLS & BADGES (Frosted Violet & Slate Style)
+   ========================================================================== */
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+  background: var(--status-purple-bg);
+  color: var(--status-purple-text);
+  border: 1px solid var(--status-purple-border);
+}
+
+.badge-purple,
+.badge-cyan,
+.badge-crimson,
+.badge-emerald,
+.badge-indigo,
+.badge-blue {
+  background: var(--status-purple-bg);
+  color: var(--status-purple-text);
+  border: 1px solid var(--status-purple-border);
+}
+
+.badge-slate {
+  background: var(--status-slate-bg);
+  color: var(--status-slate-text);
+  border: 1px solid var(--status-slate-border);
+}
+
+/* Pulsing Status Dot (Electric Radiant Purple) */
+.pulse-dot-purple,
+.pulse-dot-cyan,
+.pulse-dot-crimson,
+.pulse-dot-emerald {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-purple);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px var(--accent-purple);
+  animation: pulse-ring-purple 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-ring-purple {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(139, 92, 246, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+  }
+}
+
+/* ==========================================================================
+   PROGRESS METERS & SCORE BARS (Electric Violet Gradient)
+   ========================================================================== */
+
+.progress-track {
+  height: 6px;
+  width: 100%;
+  border-radius: 9999px;
+  background: #12121A;
+  overflow: hidden;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.progress-fill-gradient {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #7C3AED 0%, #A855F7 50%, #C084FC 100%);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.5);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   DIFFERENTIATED BUTTONS & CONTROLS (Multi-Style Suite as requested)
+   ========================================================================== */
+
+/* 1. Hero Main CTA: Radiant Purple Pill Button (from reference hero) */
+.btn-get-started {
+  background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 14.5px;
+  padding: 11px 28px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  box-shadow: 0 4px 22px rgba(139, 92, 246, 0.50);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: -0.01em;
+}
+
+.btn-get-started:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.70), 0 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.btn-get-started:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* 2. Hero Secondary Ghost/Glass Pill (from reference hero "View Templates") */
+.btn-hero-ghost {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  color: #E4E4E7;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 11px 22px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-hero-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* 3. Button Style A: Solid Electric Violet (used in Card 1 Camera Studio) */
+.btn-violet-solid,
+.btn-primary {
+  background: #8B5CF6;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.40);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-violet-solid:hover,
+.btn-primary:hover {
+  transform: translateY(-1px);
+  background: #7C3AED;
+  box-shadow: 0 6px 22px rgba(139, 92, 246, 0.60);
+}
+
+.btn-violet-solid:active,
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* 4. Button Style B: Indigo-to-Violet Gradient (used in Card 2 3D Avatar Studio) */
+.btn-gradient-indigo-violet {
+  background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.40);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-gradient-indigo-violet:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  box-shadow: 0 6px 24px rgba(139, 92, 246, 0.60);
+}
+
+/* 5. Button Style C: Frosted Violet Glass Outline (used in Card 3 Video Studio) */
+.btn-frosted-violet {
+  background: rgba(139, 92, 246, 0.12);
+  color: #DDD6FE;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  backdrop-filter: blur(10px);
+  transition: all 0.2s ease;
+}
+
+.btn-frosted-violet:hover {
+  background: rgba(139, 92, 246, 0.24);
+  color: #FFFFFF;
+  border-color: rgba(168, 85, 247, 0.60);
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.35);
+  transform: translateY(-1px);
+}
+
+/* 6. Button Style D: Sleek Charcoal Slate Pill (used in Card 4 Sign Library) */
+.btn-charcoal {
+  background: #1C1C24;
+  color: #F4F4F5;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition: all 0.2s ease;
+}
+
+.btn-charcoal:hover {
+  background: #272734;
+  border-color: rgba(168, 85, 247, 0.40);
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
+}
+
+/* 7. Button Style E: Standard Secondary Glass */
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  color: #E4E4E7;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-secondary.active {
+  background: var(--accent-gradient);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.30);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.40);
+}
+
+.btn-secondary-light {
+  background: rgba(255, 255, 255, 0.06);
+  color: #E4E4E7;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary-light:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--accent-purple);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   SEGMENTED CONTROLS & LANGUAGE SWITCHER
+   ========================================================================== */
+
+.lang-segmented-pill {
+  display: inline-flex;
+  align-items: center;
+  background: #121218;
+  border: 1px solid var(--border-subtle);
+  padding: 3px 4px;
+  border-radius: 9999px;
+  gap: 3px;
+}
+
+.lang-icon-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px 0 8px;
+  color: var(--accent-purple);
+}
+
+.lang-pill-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.lang-pill-btn:hover {
+  color: #FFFFFF;
+  background: rgba(139, 92, 246, 0.12);
+}
+
+.lang-pill-btn.active {
+  background: var(--accent-gradient);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 2px 10px rgba(139, 92, 246, 0.45);
+}
+
+/* Audio Waveform Animation (Radiant Violet) */
+.wave-bar {
+  width: 3px;
+  height: 20px;
+  background: var(--accent-purple);
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(139, 92, 246, 0.5);
+  animation: wave-anim 1.2s ease-in-out infinite alternate;
+}
+
+.wave-bar:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.wave-bar:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.wave-bar:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.wave-bar:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes wave-anim {
+  0% {
+    height: 5px;
+    opacity: 0.4;
+  }
+
+  100% {
+    height: 22px;
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   MONOSPACE TERMINAL STYLING (Charcoal Black & Purple Tags)
+   ========================================================================== */
+
+.terminal-card {
+  background: var(--bg-terminal);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  font-family: var(--font-mono);
+  overflow: hidden;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.8), var(--shadow-card);
+}
+
+.terminal-header {
+  background: #101016;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.terminal-body {
+  padding: 12px 14px;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: #D4D4D8;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.terminal-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.terminal-tag-pass {
+  color: var(--accent-purple);
+  font-weight: 600;
+}
+
+.terminal-tag-info {
+  color: var(--accent-lavender);
+  font-weight: 600;
+}
+
+.terminal-tag-warn {
+  color: #FBBF24;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   LIVE CAMERA: MOTHER TONGUE & CONVERSATION DIALOGUE STYLES
+   ========================================================================== */
+
+.mother-tongue-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 900px) {
+  .mother-tongue-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.mother-tongue-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgba(22, 22, 32, 0.7);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-body);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: left;
+}
+
+.mother-tongue-btn:hover {
+  background: rgba(139, 92, 246, 0.12);
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* Custom Voice Action Button (Listen Description / Stop / Pause) */
+.voice-btn-idle {
+  background: linear-gradient(135deg, rgba(30, 24, 46, 0.85) 0%, rgba(18, 16, 28, 0.95) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.45);
+  color: #FFFFFF;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), 0 0 15px rgba(139, 92, 246, 0.2);
+}
+
+.voice-btn-idle:hover {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.25) 0%, rgba(109, 40, 217, 0.35) 100%);
+  border-color: var(--accent-purple);
+  box-shadow: 0 6px 22px rgba(139, 92, 246, 0.35);
+  transform: translateY(-1.5px);
+}
+
+.voice-btn-playing {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.2) 0%, rgba(185, 28, 28, 0.35) 100%);
+  border: 1px solid #EF4444;
+  color: #FEE2E2;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.35);
+  animation: pulse-border-red 2s infinite alternate;
+}
+
+@keyframes pulse-border-red {
+  0% {
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 22px rgba(239, 68, 68, 0.6);
+  }
+}
+
+.mother-tongue-btn.active {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.28) 0%, rgba(109, 40, 217, 0.35) 100%);
+  border-color: var(--accent-purple);
+  color: #FFFFFF;
+  font-weight: 700;
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.3);
+}
+
+.mother-tongue-flag {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.dialogue-stream-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--shadow-card);
+}
+
+.dialogue-bubble-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.dialogue-bubble {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #111118;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.2s ease;
+}
+
+.dialogue-bubble:hover {
+  border-color: rgba(168, 85, 247, 0.3);
+  background: #141420;
+}
+
+.speaking-pulse-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  height: 16px;
+}
+
+.speaking-wave-dot {
+  width: 3.5px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--accent-purple);
+  animation: speaking-wave 0.8s ease-in-out infinite alternate;
+}
+
+.speaking-wave-dot:nth-child(2) {
+  animation-delay: 0.2s;
+  height: 14px;
+}
+
+.speaking-wave-dot:nth-child(3) {
+  animation-delay: 0.4s;
+  height: 10px;
+}
+
+.speaking-wave-dot:nth-child(4) {
+  animation-delay: 0.15s;
+  height: 16px;
+}
+
+@keyframes speaking-wave {
+  0% {
+    transform: scaleY(0.4);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scaleY(1.4);
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   MOVING GALAXY ICON ANIMATION SUITE
+   ========================================================================== */
+
+.galaxy-float-wrapper {
+  animation: galaxy-floating 5s ease-in-out infinite alternate;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+@keyframes galaxy-floating {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1.5deg);
+  }
+  100% {
+    transform: translateY(4px) rotate(-1deg);
+  }
+}
+
+.galaxy-core-spinning {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  animation: galaxy-spin 26s linear infinite;
+  will-change: transform;
+  box-shadow: 0 0 50px rgba(139, 92, 246, 0.55), inset 0 0 25px rgba(168, 85, 247, 0.4);
+  transition: animation-duration 0.4s ease, filter 0.3s ease;
+  display: block;
+}
+
+.galaxy-float-wrapper:hover .galaxy-core-spinning {
+  animation-duration: 9s;
+  filter: brightness(1.15) contrast(1.05);
+}
+
+@keyframes galaxy-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes galaxy-spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.galaxy-nebula-glow {
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, rgba(124, 58, 237, 0.18) 50%, transparent 75%);
+  filter: blur(24px);
+  animation: galaxy-pulse-glow 4s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes galaxy-pulse-glow {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.14);
+    opacity: 1;
+  }
+}
+
+.galaxy-orbit-ring-1 {
+  position: absolute;
+  width: 118%;
+  height: 118%;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(168, 85, 247, 0.45);
+  animation: galaxy-spin 35s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.galaxy-orbit-ring-2 {
+  position: absolute;
+  width: 134%;
+  height: 134%;
+  border-radius: 50%;
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  animation: galaxy-spin-reverse 45s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.galaxy-orbit-planet-dot {
+  position: absolute;
+  top: 14%;
+  left: 8%;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #C084FC;
+  box-shadow: 0 0 12px #C084FC, 0 0 20px rgba(139, 92, 246, 0.9);
+}
+
+.galaxy-orbit-planet-dot-2 {
+  position: absolute;
+  bottom: 18%;
+  right: 10%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #E879F9;
+  box-shadow: 0 0 10px #E879F9, 0 0 16px rgba(232, 121, 249, 0.8);
+}
+
+.galaxy-center-pulsar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #F5D0FE 0%, rgba(192, 132, 252, 0.85) 30%, rgba(139, 92, 246, 0.4) 65%, transparent 75%);
+  filter: blur(5px);
+  animation: galaxy-pulsar-breath 2.6s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 3;
+}
+
+@keyframes galaxy-pulsar-breath {
+  0% {
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.35);
+    opacity: 1;
+    filter: blur(7px);
+  }
+}

@@ -1,0 +1,502 @@
+{
+  "happy": {
+    "emoji": "😊",
+    "category": "EMOTION",
+    "en": "Happy",
+    "hi": "प्रसन्न / खुश",
+    "mr": "आनंदी",
+    "sentence_en": "I am feeling very happy and cheerful!",
+    "sentence_hi": "मैं बहुत खुश और प्रसन्न महसूस कर रहा हूँ!",
+    "sentence_mr": "मला खूप आनंद आणि समाधान वाटत आहे!"
+  },
+  "sad": {
+    "emoji": "😢",
+    "category": "EMOTION",
+    "en": "Sad",
+    "hi": "उदास / दुखी",
+    "mr": "दुःखी / खिन्न",
+    "sentence_en": "I am feeling sad and down.",
+    "sentence_hi": "मुझे उदासी और दुख महसूस हो रहा है।",
+    "sentence_mr": "मला वाईट आणि उदास वाटत आहे."
+  },
+  "angry": {
+    "emoji": "😠",
+    "category": "EMOTION",
+    "en": "Angry",
+    "hi": "क्रोधित / गुस्सा",
+    "mr": "रागावलेला / संताप",
+    "sentence_en": "I am very angry and frustrated.",
+    "sentence_hi": "मुझे बहुत गुस्सा और क्रोध आ रहा है।",
+    "sentence_mr": "मला खूप राग आणि संताप आला आहे."
+  },
+  "cry": {
+    "emoji": "😭",
+    "category": "EMOTION",
+    "en": "Crying",
+    "hi": "रोना / आँसू",
+    "mr": "रडणे / अश्रू",
+    "sentence_en": "I cannot hold back my tears, I feel like crying.",
+    "sentence_hi": "मेरी आँखों में आँसू हैं, मैं रो रहा हूँ।",
+    "sentence_mr": "माझ्या डोळ्यात पाणी आले आहे, मला रडू येत आहे."
+  },
+  "smile": {
+    "emoji": "😃",
+    "category": "EMOTION",
+    "en": "Smile",
+    "hi": "मुस्कान",
+    "mr": "हसू / स्मित",
+    "sentence_en": "Your smile brings warmth and joy.",
+    "sentence_hi": "आपकी मुस्कान मन को प्रसन्न करती है।",
+    "sentence_mr": "तुमचे हसू मनाला आनंद देते."
+  },
+  "laugh": {
+    "emoji": "😆",
+    "category": "EMOTION",
+    "en": "Laugh",
+    "hi": "हँसना / ठहाका",
+    "mr": "मोठ्याने हसणे",
+    "sentence_en": "That was hilarious, making me laugh out loud!",
+    "sentence_hi": "यह बात बहुत मजेदार थी, मुझे बहुत हँसी आई!",
+    "sentence_mr": "ती गोष्ट खूप मजेशीर होती, मला खूप हसू आले!"
+  },
+  "love": {
+    "emoji": "❤️",
+    "category": "EMOTION",
+    "en": "Love / Affection",
+    "hi": "प्रेम / स्नेह",
+    "mr": "प्रेम / आपुलकी",
+    "sentence_en": "I care about you with deep love and affection.",
+    "sentence_hi": "मैं आपसे बहुत स्नेह और प्रेम करता हूँ।",
+    "sentence_mr": "माझे तुमच्यावर मनापासून प्रेम आणि जिव्हाळा आहे."
+  },
+  "hate": {
+    "emoji": "💔",
+    "category": "EMOTION",
+    "en": "Dislike / Hate",
+    "hi": "नापसंद / घृणा",
+    "mr": "नापसंत / तिरस्कार",
+    "sentence_en": "I strongly dislike this situation.",
+    "sentence_hi": "मुझे यह स्थिति बिल्कुल पसंद नहीं है।",
+    "sentence_mr": "मला ही परिस्थिती अजिबात आवडत नाही."
+  },
+  "fear": {
+    "emoji": "😨",
+    "category": "EMOTION",
+    "en": "Fear / Afraid",
+    "hi": "भय / डर",
+    "mr": "भीती / भयभीत",
+    "sentence_en": "I am scared and fearful of what might happen.",
+    "sentence_hi": "मुझे बहुत डर और भय लग रहा है।",
+    "sentence_mr": "मला खूप भीती वाटत आहे."
+  },
+  "afraid": {
+    "emoji": "😨",
+    "category": "EMOTION",
+    "en": "Afraid",
+    "hi": "डरा हुआ",
+    "mr": "घाबरलेला",
+    "sentence_en": "Please stay with me, I feel afraid.",
+    "sentence_hi": "कृपया मेरे साथ रहें, मुझे डर लग रहा है।",
+    "sentence_mr": "कृपया माझ्या सोबत राहा, मला भीती वाटत आहे."
+  },
+  "scared": {
+    "emoji": "😱",
+    "category": "EMOTION",
+    "en": "Scared",
+    "hi": "सहमा हुआ",
+    "mr": "धडकी भरलेला",
+    "sentence_en": "That really startled and scared me!",
+    "sentence_hi": "उसने मुझे सचमुच डरा दिया!",
+    "sentence_mr": "त्याने मला खरंच घाबरवून सोडले!"
+  },
+  "worry": {
+    "emoji": "😟",
+    "category": "EMOTION",
+    "en": "Worry / Anxiety",
+    "hi": "चिंता / घबराहट",
+    "mr": "काळजी / चिंता",
+    "sentence_en": "I am deeply worried about this.",
+    "sentence_hi": "मुझे इस बारे में गहरी चिंता हो रही है।",
+    "sentence_mr": "मला याबद्दल खूप काळजी वाटत आहे."
+  },
+  "excited": {
+    "emoji": "🤩",
+    "category": "EMOTION",
+    "en": "Excited / Thrilled",
+    "hi": "उत्साहित / रोमांचित",
+    "mr": "उत्साही / उत्सुक",
+    "sentence_en": "I am super excited and looking forward to this!",
+    "sentence_hi": "मैं बहुत उत्साहित और रोमांचित हूँ!",
+    "sentence_mr": "मी खूप उत्साही आणि उत्सुक आहे!"
+  },
+  "tired": {
+    "emoji": "😴",
+    "category": "EMOTION",
+    "en": "Tired / Exhausted",
+    "hi": "थका हुआ / क्लांत",
+    "mr": "थकलेला / दमलेला",
+    "sentence_en": "I feel exhausted and need to rest.",
+    "sentence_hi": "मैं बहुत थक गया हूँ और आराम की जरूरत है।",
+    "sentence_mr": "मी खूप दमलो आहे आणि मला विश्रांतीची गरज आहे."
+  },
+  "sick": {
+    "emoji": "🤒",
+    "category": "EMOTION",
+    "en": "Sick / Unwell",
+    "hi": "बीमार / अस्वस्थ",
+    "mr": "आजारी / अस्वस्थ",
+    "sentence_en": "I am feeling sick and unwell.",
+    "sentence_hi": "मेरी तबीयत ठीक नहीं है, मैं बीमार हूँ।",
+    "sentence_mr": "माझी प्रकृती बरी नाही, मी आजारी आहे."
+  },
+  "hurt": {
+    "emoji": "🤕",
+    "category": "EMOTION",
+    "en": "Hurt / Injured",
+    "hi": "चोट / दर्द",
+    "mr": "दुखापत / वेदना",
+    "sentence_en": "I got hurt, it is paining a lot.",
+    "sentence_hi": "मुझे चोट लगी है, बहुत दर्द हो रहा है।",
+    "sentence_mr": "मला दुखापत झाली आहे, खूप दुखत आहे."
+  },
+  "pain": {
+    "emoji": "😫",
+    "category": "EMOTION",
+    "en": "Pain",
+    "hi": "पीड़ा / वेदना",
+    "mr": "वेदना / त्रास",
+    "sentence_en": "I am in unbearable pain, please help me.",
+    "sentence_hi": "मुझे असहनीय दर्द हो रहा है, कृपया मदद करें।",
+    "sentence_mr": "मला असह्य वेदना होत आहेत, कृपया मदत करा."
+  },
+  "feel": {
+    "emoji": "🤲",
+    "category": "EMOTION",
+    "en": "Feel / Sense",
+    "hi": "महसूस करना",
+    "mr": "जाणवणे / अनुभवणे",
+    "sentence_en": "I can feel the emotions clearly.",
+    "sentence_hi": "मैं इन भावनाओं को स्पष्ट रूप से महसूस कर सकता हूँ।",
+    "sentence_mr": "मी या भावना स्पष्टपणे अनुभवू शकतो."
+  },
+  "surprise": {
+    "emoji": "😲",
+    "category": "EMOTION",
+    "en": "Surprise / Shock",
+    "hi": "आश्चर्य / हैरान",
+    "mr": "आश्चर्य / चकित",
+    "sentence_en": "What a pleasant and unexpected surprise!",
+    "sentence_hi": "यह कितना सुखद और अचरज भरा आश्चर्य है!",
+    "sentence_mr": "हे किती सुखद आणि अनपेक्षित आश्चर्य आहे!"
+  },
+  "bored": {
+    "emoji": "🥱",
+    "category": "EMOTION",
+    "en": "Bored",
+    "hi": "ऊब जाना",
+    "mr": "कंटाळलेला",
+    "sentence_en": "I am feeling quite bored right now.",
+    "sentence_hi": "मुझे इस समय बहुत बोरियत महसूस हो रही है।",
+    "sentence_mr": "मला सध्या खूप कंटाळा आला आहे."
+  },
+  "calm": {
+    "emoji": "😌",
+    "category": "EMOTION",
+    "en": "Calm / Peaceful",
+    "hi": "शांत / सहज",
+    "mr": "शांत / निवांत",
+    "sentence_en": "Take a deep breath, remain calm and peaceful.",
+    "sentence_hi": "गहरी सांस लें, शांत और तनावमुक्त रहें।",
+    "sentence_mr": "दीर्घ श्वास घ्या, शांत आणि तणावमुक्त राहा."
+  },
+  "nervous": {
+    "emoji": "😰",
+    "category": "EMOTION",
+    "en": "Nervous / Anxious",
+    "hi": "घबराया हुआ",
+    "mr": "घाबरलेला / अस्वस्थ",
+    "sentence_en": "My hands are trembling, I feel quite nervous.",
+    "sentence_hi": "मेरे हाथ कांप रहे हैं, मुझे घबराहट हो रही है।",
+    "sentence_mr": "माझे हात थरथरत आहेत, मला अस्वस्थ वाटत आहे."
+  },
+  "proud": {
+    "emoji": "🦚",
+    "category": "EMOTION",
+    "en": "Proud",
+    "hi": "गर्व / अभिमान",
+    "mr": "अभिमान / गर्व",
+    "sentence_en": "I feel immensely proud of this achievement!",
+    "sentence_hi": "मुझे इस उपलब्धि पर बहुत गर्व है!",
+    "sentence_mr": "मला या यशाचा मनापासून अभिमान वाटतो!"
+  },
+  "shy": {
+    "emoji": "🙈",
+    "category": "EMOTION",
+    "en": "Shy / Timid",
+    "hi": "शर्मीला / संकोची",
+    "mr": "लाजाळू / संकोची",
+    "sentence_en": "I feel a bit shy speaking in front of people.",
+    "sentence_hi": "मुझे लोगों के सामने बात करने में थोड़ा संकोच होता है।",
+    "sentence_mr": "मला लोकांसमोर बोलायला थोडा संकोच वाटतो."
+  },
+  "confused": {
+    "emoji": "🤔",
+    "category": "EMOTION",
+    "en": "Confused",
+    "hi": "भ्रमित / उलझन",
+    "mr": "गोंधळलेला",
+    "sentence_en": "I am confused and did not quite get that.",
+    "sentence_hi": "मैं उलझन में हूँ और पूरी तरह समझ नहीं पाया।",
+    "sentence_mr": "माझा गोंधळ झाला आहे आणि मला नीट समजले नाही."
+  },
+  "depressed": {
+    "emoji": "🌧️",
+    "category": "EMOTION",
+    "en": "Depressed",
+    "hi": "हताश / अवसाद",
+    "mr": "खचलेला / निराश",
+    "sentence_en": "I am going through a difficult emotional state.",
+    "sentence_hi": "मैं एक कठिन मानसिक और भावनात्मक स्थिति से गुजर रहा हूँ।",
+    "sentence_mr": "मी एका कठीण मानसिक आणि भावनिक टप्प्यातून जात आहे."
+  },
+  "upset": {
+    "emoji": "😤",
+    "category": "EMOTION",
+    "en": "Upset",
+    "hi": "परेशान / नाराज",
+    "mr": "नाराज / अस्वस्थ",
+    "sentence_en": "I am feeling deeply upset about this matter.",
+    "sentence_hi": "मैं इस बात को लेकर काफी परेशान और नाराज हूँ।",
+    "sentence_mr": "मी या गोष्टीवरून खूप नाराज आणि अस्वस्थ आहे."
+  },
+  "sorry": {
+    "emoji": "🙇",
+    "category": "CONVERSATION",
+    "en": "Sorry / Apology",
+    "hi": "माफ़ी / क्षमा",
+    "mr": "माफी / दिलगीर",
+    "sentence_en": "I sincerely apologize for the misunderstanding.",
+    "sentence_hi": "हुई भूल के लिए मैं दिल से माफ़ी चाहता हूँ।",
+    "sentence_mr": "झालेल्या चुकीबद्दल मी मनापासून माफी मागतो."
+  },
+  "please": {
+    "emoji": "🙏",
+    "category": "CONVERSATION",
+    "en": "Please",
+    "hi": "कृपया",
+    "mr": "कृपया",
+    "sentence_en": "Could you please assist me kindly?",
+    "sentence_hi": "क्या आप कृपया मेरी सहायता कर सकते हैं?",
+    "sentence_mr": "कृपया तुम्ही मला मदत करू शकता का?"
+  },
+  "thank you": {
+    "emoji": "🤝",
+    "category": "CONVERSATION",
+    "en": "Thank You",
+    "hi": "धन्यवाद",
+    "mr": "धन्यवाद",
+    "sentence_en": "Thank you so much for your kind assistance!",
+    "sentence_hi": "आपकी अमूल्य सहायता के लिए बहुत-बहुत धन्यवाद!",
+    "sentence_mr": "तुमच्या मोलाच्या मदतीबद्दल मनापासून धन्यवाद!"
+  },
+  "hello": {
+    "emoji": "👋",
+    "category": "CONVERSATION",
+    "en": "Hello / Namaste",
+    "hi": "नमस्ते / नमस्कार",
+    "mr": "नमस्कार",
+    "sentence_en": "Hello everyone, warm greetings to you!",
+    "sentence_hi": "आप सभी को मेरा सप्रेम नमस्कार!",
+    "sentence_mr": "सर्वांना माझा सस्नेह नमस्कार!"
+  },
+  "good": {
+    "emoji": "👍",
+    "category": "CONVERSATION",
+    "en": "Good / Well",
+    "hi": "अच्छा / बढ़िया",
+    "mr": "छान / चांगले",
+    "sentence_en": "Everything is great and looking good.",
+    "sentence_hi": "सब कुछ बहुत अच्छा और सुखद है।",
+    "sentence_mr": "सर्व काही खूप छान आणि उत्तम आहे."
+  },
+  "bad": {
+    "emoji": "👎",
+    "category": "CONVERSATION",
+    "en": "Bad / Poor",
+    "hi": "बुरा / ख़राब",
+    "mr": "वाईट / खराब",
+    "sentence_en": "This is unfavorable and looking bad.",
+    "sentence_hi": "यह स्थिति खराब और अनुचित है।",
+    "sentence_mr": "ही परिस्थिती वाईट आणि अयोग्य आहे."
+  },
+  "help": {
+    "emoji": "🆘",
+    "category": "EMERGENCY",
+    "en": "Help / Emergency",
+    "hi": "मदद / सहायता",
+    "mr": "मदत / साह्य",
+    "sentence_en": "I need help urgently, please assist me!",
+    "sentence_hi": "मुझे तुरंत मदद की आवश्यकता है, कृपया सहायता करें!",
+    "sentence_mr": "मला त्वरित मदतीची गरज आहे, कृपया साह्य करा!"
+  },
+  "want": {
+    "emoji": "🤲",
+    "category": "CONVERSATION",
+    "en": "Want / Need",
+    "hi": "चाहना / आवश्यकता",
+    "mr": "हवे असणे / गरज",
+    "sentence_en": "I want and need this right now.",
+    "sentence_hi": "मुझे इस समय इसकी आवश्यकता है।",
+    "sentence_mr": "मला सध्या याची अत्यंत गरज आहे."
+  },
+  "like": {
+    "emoji": "💖",
+    "category": "CONVERSATION",
+    "en": "Like / Fond of",
+    "hi": "पसंद करना",
+    "mr": "आवडणे",
+    "sentence_en": "I really like and appreciate this.",
+    "sentence_hi": "मुझे यह वास्तव में बहुत पसंद है।",
+    "sentence_mr": "मला हे खरंच खूप आवडले आहे."
+  },
+  "agree": {
+    "emoji": "👌",
+    "category": "CONVERSATION",
+    "en": "Agree",
+    "hi": "सहमत",
+    "mr": "सहमत",
+    "sentence_en": "I fully agree with what you are saying.",
+    "sentence_hi": "मैं आपकी बात से पूरी तरह सहमत हूँ।",
+    "sentence_mr": "मी तुमच्या बोलण्याशी पूर्णपणे सहमत आहे."
+  },
+  "disagree": {
+    "emoji": "🙅",
+    "category": "CONVERSATION",
+    "en": "Disagree",
+    "hi": "असहमत",
+    "mr": "असहमत",
+    "sentence_en": "I respectfully disagree with this viewpoint.",
+    "sentence_hi": "मैं इस दृष्टिकोण से सहमत नहीं हूँ।",
+    "sentence_mr": "मी या दृष्टिकोनाशी असहमत आहे."
+  },
+  "wonderful": {
+    "emoji": "✨",
+    "category": "EMOTION",
+    "en": "Wonderful / Amazing",
+    "hi": "अद्भुत / शानदार",
+    "mr": "अप्रतिम / सुंदर",
+    "sentence_en": "That is absolutely wonderful and marvelous!",
+    "sentence_hi": "यह सचमुच अद्भुत और शानदार है!",
+    "sentence_mr": "हे खरंच खूप अप्रतिम आणि सुंदर आहे!"
+  },
+  "terrible": {
+    "emoji": "⚡",
+    "category": "EMOTION",
+    "en": "Terrible / Dreadful",
+    "hi": "भयानक / कष्टकारी",
+    "mr": "भयंकर / त्रासदायक",
+    "sentence_en": "That was a terrible and distressing event.",
+    "sentence_hi": "वह एक भयानक और दुखद घटना थी।",
+    "sentence_mr": "ती एक भयंकर आणि त्रासदायक घटना होती."
+  },
+  "water": {
+    "emoji": "🤟",
+    "category": "VOCABULARY",
+    "en": "Water",
+    "hi": "Water",
+    "mr": "Water",
+    "sentence_en": "I am expressing: Water.",
+    "sentence_hi": "मैं संकेत कर रहा हूँ: water।",
+    "sentence_mr": "मी संकेत करत आहे: water."
+  },
+  "food": {
+    "emoji": "🤟",
+    "category": "VOCABULARY",
+    "en": "Food",
+    "hi": "Food",
+    "mr": "Food",
+    "sentence_en": "I am expressing: Food.",
+    "sentence_hi": "मैं संकेत कर रहा हूँ: food।",
+    "sentence_mr": "मी संकेत करत आहे: food."
+  },
+  "eat": {
+    "emoji": "🤟",
+    "category": "VOCABULARY",
+    "en": "Eat",
+    "hi": "Eat",
+    "mr": "Eat",
+    "sentence_en": "I am expressing: Eat.",
+    "sentence_hi": "मैं संकेत कर रहा हूँ: eat।",
+    "sentence_mr": "मी संकेत करत आहे: eat."
+  },
+  "drink": {
+    "emoji": "🤟",
+    "category": "VOCABULARY",
+    "en": "Drink",
+    "hi": "Drink",
+    "mr": "Drink",
+    "sentence_en": "I am expressing: Drink.",
+    "sentence_hi": "मैं संकेत कर रहा हूँ: drink।",
+    "sentence_mr": "मी संकेत करत आहे: drink."
+  },
+  "sleep": {
+    "emoji": "🤟",
+    "category": "VOCABULARY",
+    "en": "Sleep",
+    "hi": "Sleep",
+    "mr": "Sleep",
+    "sentence_en": "I am expressing: Sleep.",
+    "sentence_hi": "मैं संकेत कर रहा हूँ: sleep।",
+    "sentence_mr": "मी संकेत करत आहे: sleep."
+  },
+  "home": {
+    "emoji": "🤟",
+    "category": "VOCABULARY",
+    "en": "Home",
+    "hi": "Home",
+    "mr": "Home",
+    "sentence_en": "I am expressing: Home.",
+    "sentence_hi": "मैं संकेत कर रहा हूँ: home।",
+    "sentence_mr": "मी संकेत करत आहे: home."
+  },
+  "doctor": {
+    "emoji": "🤟",
+    "category": "VOCABULARY",
+    "en": "Doctor",
+    "hi": "Doctor",
+    "mr": "Doctor",
+    "sentence_en": "I am expressing: Doctor.",
+    "sentence_hi": "मैं संकेत कर रहा हूँ: doctor।",
+    "sentence_mr": "मी संकेत करत आहे: doctor."
+  },
+  "hospital": {
+    "emoji": "🤟",
+    "category": "VOCABULARY",
+    "en": "Hospital",
+    "hi": "Hospital",
+    "mr": "Hospital",
+    "sentence_en": "I am expressing: Hospital.",
+    "sentence_hi": "मैं संकेत कर रहा हूँ: hospital।",
+    "sentence_mr": "मी संकेत करत आहे: hospital."
+  },
+  "friend": {
+    "emoji": "🤟",
+    "category": "VOCABULARY",
+    "en": "Friend",
+    "hi": "Friend",
+    "mr": "Friend",
+    "sentence_en": "I am expressing: Friend.",
+    "sentence_hi": "मैं संकेत कर रहा हूँ: friend।",
+    "sentence_mr": "मी संकेत करत आहे: friend."
+  },
+  "family": {
+    "emoji": "🤟",
+    "category": "VOCABULARY",
+    "en": "Family",
+    "hi": "Family",
+    "mr": "Family",
+    "sentence_en": "I am expressing: Family.",
+    "sentence_hi": "मैं संकेत कर रहा हूँ: family।",
+    "sentence_mr": "मी संकेत करत आहे: family."
+  }
+}
