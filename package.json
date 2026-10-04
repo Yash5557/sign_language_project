@@ -4,7 +4,7 @@
   "private": true,
   "description": "Helping Hand AI - Multilingual Sign Language Translation Studio",
   "scripts": {
-    "build": "npm --prefix frontend install && npm --prefix frontend run build",
+    "build": "npm --prefix frontend install && (chmod -R +x frontend/node_modules/.bin 2>/dev/null || true) && npm --prefix frontend run build",
     "start": "npm --prefix frontend run preview"
   }
 }
