@@ -6,6 +6,7 @@ from typing import List, Optional, Dict, Any
 from datetime import datetime
 import numpy as np
 from fastapi import FastAPI, HTTPException, UploadFile, File, Form
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
@@ -22,6 +23,25 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+FRONTEND_DIST = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "frontend", "dist")
+
+@app.get("/health")
+async def health_check():
+    return {"status": "ok", "service": "Helping Hand AI", "timestamp": datetime.utcnow().isoformat() + "Z"}
+
+@app.get("/")
+async def root():
+    index_file = os.path.join(FRONTEND_DIST, "index.html")
+    if os.path.exists(index_file):
+        return FileResponse(index_file)
+    return {
+        "status": "online",
+        "service": "Helping Hand AI - Multilingual Sign Language Studio API",
+        "version": "4.0.0",
+        "documentation": "/docs",
+        "health": "/health"
+    }
 
 # ---------------------------------------------------------------------------
 # LOAD TRAINED 99.96% DEEP NEURAL NETWORK MODEL FOR TWO-HAND ANGLES

@@ -1,0 +1,10 @@
+{
+  "name": "helping-hand-sign-language",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Helping Hand AI - Multilingual Sign Language Translation Studio",
+  "scripts": {
+    "build": "npm --prefix frontend install && npm --prefix frontend run build",
+    "start": "npm --prefix frontend run preview"
+  }
+}
