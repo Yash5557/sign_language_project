@@ -17,6 +17,7 @@ import {
   UsersIcon,
   SparklesIcon
 } from "./components/Icons";
+import helpingHandEmblem from "./assets/helping-hand-emblem.png";
 
 function AppContent() {
   const [currentMode, setCurrentMode] = useState("welcome"); // "welcome" | "camera" | "speech" | "video" | "dictionary"
@@ -133,7 +134,7 @@ function AppContent() {
           }}
         >
           <img
-            src="/helping-hand-emblem.png"
+            src={helpingHandEmblem}
             alt="Helping Hand Logo"
             style={{
               width: "34px",

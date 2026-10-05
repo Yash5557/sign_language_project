@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import heroPurpleRing from "../assets/hero-purple-ring.jpg";
 import {
   CameraIcon,
   TranslateIcon,
@@ -388,7 +389,7 @@ export default function WelcomeScreen({
             }}
           >
             <img
-              src="/hero-purple-ring.jpg"
+              src={heroPurpleRing}
               alt="Galaxy Logo"
               style={{
                 width: "100%",

@@ -1,4 +1,5 @@
 import React from "react";
+import helpingHandEmblem from "../assets/helping-hand-emblem.png";
 import {
   CheckCircle2,
   Terminal,
@@ -75,7 +76,7 @@ export function ShieldCheckIcon({ size = 18, color = "currentColor", strokeWidth
 export function LogoIcon({ size = 28, className = "", style = {} }) {
   return (
     <img
-      src="/helping-hand-emblem.png"
+      src={helpingHandEmblem}
       alt="Helping Hand Logo"
       width={size}
       height={size}
