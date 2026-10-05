@@ -6,5 +6,8 @@
   "scripts": {
     "build": "npm --prefix frontend install --include=dev && npm --prefix frontend run build",
     "start": "npm --prefix frontend run preview"
+  },
+  "allowScripts": {
+    "esbuild": true
   }
 }

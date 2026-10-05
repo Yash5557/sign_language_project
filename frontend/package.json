@@ -8,6 +8,9 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "allowScripts": {
+    "esbuild": true
+  },
   "dependencies": {
     "@mediapipe/camera_utils": "0.3.1675466862",
     "@mediapipe/face_mesh": "^0.4.1633559619",
