@@ -120,6 +120,41 @@ export default function VideoScreen({ currentLang = "en" }) {
       en: { text: "Yes / Agreement", desc: "Hand forming a fist and nodding vertically up and down in agreement." },
       hi: { text: "हाँ (Haan)", desc: "सहमति व्यक्त करने के लिए मुट्ठी बनाकर ऊपर-नीचे हिलाना (हाँ)।" },
       mr: { text: "होय (Hoy)", desc: "संमती दर्शवण्यासाठी मूठ वर-खाली हलवणे (होय)." }
+    },
+    NO: {
+      en: { text: "No / Negation", desc: "Index finger wagging horizontally or index and thumb snapping to signal negation." },
+      hi: { text: "नहीं (Nahi)", desc: "अस्वीकृति दर्शाने के लिए तर्जनी उंगली को बाएँ-दाएँ हिलाना।" },
+      mr: { text: "नाही (Nahi)", desc: "नकार दर्शवण्यासाठी बोट डावीकडे-उजवीकडे हलवणे." }
+    },
+    HELP: {
+      en: { text: "Help / Assistance", desc: "Thumbs-up resting on flat open palm and raised upwards indicating assistance." },
+      hi: { text: "मदद (Madad)", desc: "खुली हथेली पर अंगूठा रखकर ऊपर उठाना, जो सहायता का प्रतीक है।" },
+      mr: { text: "मदत (Madat)", desc: "उघड्या तळहातावर अंगठा ठेवून हात वर उचलणे (मदत दर्शवणे)." }
+    },
+    SORRY: {
+      en: { text: "Sorry / Apology", desc: "Closed fist rubbing in circular motion over center of chest indicating remorse." },
+      hi: { text: "माफ़ कीजिये (Maaf Kijiye)", desc: "क्षमा मांगने के लिए मुट्ठी को छाती के बीच में गोल घुमाना।" },
+      mr: { text: "माफ करा (Maaf Kara)", desc: "दिलगिरी व्यक्त करण्यासाठी छातीवर मूठ गोलाकार फिरवणे." }
+    },
+    PLEASE: {
+      en: { text: "Please / Request", desc: "Open flat palm rubbing chest gently in clockwise circles to make a courteous request." },
+      hi: { text: "कृपया (Kripya)", desc: "विनम्र निवेदन के लिए खुली हथेली को छाती पर धीरे-धीरे गोल घुमाना।" },
+      mr: { text: "कृपया (Krupaya)", desc: "नम्र विनंतीसाठी उघडा तळहात छातीवर गोलाकार फिरवणे." }
+    },
+    FAMILY: {
+      en: { text: "Family", desc: "Both hands forming 'F' or circle touching at thumbs and sweeping around to meet at pinkies." },
+      hi: { text: "परिवार (Parivar)", desc: "दोनों हाथों से घेरा बनाकर परिवार के एकत्व को दर्शाना।" },
+      mr: { text: "कुटुंब (Kutumb)", desc: "दोन्ही हातांनी वर्तुळ करून कुटुंबाची एकता दर्शवणे." }
+    },
+    HOUSE: {
+      en: { text: "House / Home", desc: "Fingertips touching above head or chest to form a peaked roof triangle shape." },
+      hi: { text: "घर (Ghar)", desc: "दोनों हाथों की उंगलियों को मिलाकर छत का त्रिकोण आकार बनाना।" },
+      mr: { text: "घर (Ghar)", desc: "दोन्ही हातांची बोटे जोडून छपराचा त्रिकोण आकार तयार करणे." }
+    },
+    I_LOVE_YOU: {
+      en: { text: "I Love You", desc: "Hand raising thumb, index finger, and pinkie finger simultaneously (ILY sign)." },
+      hi: { text: "मैं आपसे प्रेम करता हूँ (I Love You)", desc: "अंगूठा, तर्जनी और कनिष्ठिका उंगली एक साथ उठाकर प्रेम का संकेत देना।" },
+      mr: { text: "माझे तुमच्यावर प्रेम आहे (I Love You)", desc: "अंगठा, तर्जनी आणि करंगळी एकाच वेळी वर करून प्रेम दर्शवणे." }
     }
   };
 
@@ -187,7 +222,8 @@ export default function VideoScreen({ currentLang = "en" }) {
       formData.append("file", file);
       formData.append("language", langKey);
 
-      const res = await fetch("http://localhost:8000/process-video", {
+      const apiBase = import.meta.env.VITE_API_URL ?? (window.location.hostname === "localhost" ? "http://localhost:8000" : "");
+      const res = await fetch(`${apiBase}/process-video`, {
         method: "POST",
         body: formData,
       });
@@ -212,6 +248,13 @@ export default function VideoScreen({ currentLang = "en" }) {
       const nameLower = file.name.toLowerCase();
       if (nameLower.includes("thank") || nameLower.includes("dhanya")) key = "THANK_YOU";
       else if (nameLower.includes("yes") || nameLower.includes("haan") || nameLower.includes("hoy")) key = "YES";
+      else if (nameLower.includes("no") || nameLower.includes("nahin") || nameLower.includes("nahi")) key = "NO";
+      else if (nameLower.includes("help") || nameLower.includes("madad") || nameLower.includes("sahayata")) key = "HELP";
+      else if (nameLower.includes("sorry") || nameLower.includes("maaf") || nameLower.includes("kshama")) key = "SORRY";
+      else if (nameLower.includes("please") || nameLower.includes("kripya") || nameLower.includes("krupaya")) key = "PLEASE";
+      else if (nameLower.includes("family") || nameLower.includes("parivar") || nameLower.includes("kutumb")) key = "FAMILY";
+      else if (nameLower.includes("house") || nameLower.includes("home") || nameLower.includes("ghar")) key = "HOUSE";
+      else if (nameLower.includes("love") || nameLower.includes("prem") || nameLower.includes("pyar")) key = "I_LOVE_YOU";
 
       const data = DICTIONARY[key][langKey] || DICTIONARY[key].en;
       const calcLatency = parseFloat((performance.now() - startTime).toFixed(1));

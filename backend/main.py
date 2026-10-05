@@ -8,6 +8,7 @@ import numpy as np
 from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 app = FastAPI(
@@ -26,7 +27,13 @@ app.add_middleware(
 
 FRONTEND_DIST = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "frontend", "dist")
 
+if os.path.exists(FRONTEND_DIST):
+    assets_dir = os.path.join(FRONTEND_DIST, "assets")
+    if os.path.exists(assets_dir):
+        app.mount("/assets", StaticFiles(directory=assets_dir), name="assets")
+
 @app.get("/health")
+@app.get("/api/health")
 async def health_check():
     return {"status": "ok", "service": "Helping Hand AI", "timestamp": datetime.utcnow().isoformat() + "Z"}
 
@@ -279,6 +286,41 @@ TRANSLATION_DB = {
         "en": {"text": "Yes", "gloss": "YES", "description": "Hand making a fist and nodding up and down to indicate agreement."},
         "hi": {"text": "हाँ (Haan)", "gloss": "हाँ", "description": "सहमति व्यक्त करने के लिए मुट्ठी बनाकर ऊपर-नीचे हिलाना।"},
         "mr": {"text": "होय (Hoy)", "gloss": "होय", "description": "संमती दर्शवण्यासाठी मूठ वर-खाली हलवणे."}
+    },
+    "NO": {
+        "en": {"text": "No", "gloss": "NO", "description": "Index finger wagging horizontally or index and thumb snapping to signal negation."},
+        "hi": {"text": "नहीं (Nahi)", "gloss": "नहीं", "description": "अस्वीकृति दर्शाने के लिए तर्जनी उंगली को बाएँ-दाएँ हिलाना।"},
+        "mr": {"text": "नाही (Nahi)", "gloss": "नाही", "description": "नकार दर्शवण्यासाठी बोट डावीकडे-उजवीकडे हलवणे."}
+    },
+    "HELP": {
+        "en": {"text": "Help", "gloss": "HELP", "description": "Thumbs-up resting on flat open palm and raised upwards indicating assistance."},
+        "hi": {"text": "मदद (Madad)", "gloss": "मदद", "description": "खुली हथेली पर अंगूठा रखकर ऊपर उठाना, जो सहायता का प्रतीक है।"},
+        "mr": {"text": "मदत (Madat)", "gloss": "मदत", "description": "उघड्या तळहातावर अंगठा ठेवून हात वर उचलणे (मदत दर्शवणे)."}
+    },
+    "SORRY": {
+        "en": {"text": "Sorry", "gloss": "SORRY", "description": "Closed fist rubbing in circular motion over center of chest indicating remorse."},
+        "hi": {"text": "माफ़ कीजिये (Maaf Kijiye)", "gloss": "माफ़", "description": "क्षमा मांगने के लिए मुट्ठी को छाती के बीच में गोल घुमाना।"},
+        "mr": {"text": "माफ करा (Maaf Kara)", "gloss": "माफ", "description": "दिलगिरी व्यक्त करण्यासाठी छातीवर मूठ गोलाकार फिरवणे."}
+    },
+    "PLEASE": {
+        "en": {"text": "Please", "gloss": "PLEASE", "description": "Open flat palm rubbing chest gently in clockwise circles to make a courteous request."},
+        "hi": {"text": "कृपया (Kripya)", "gloss": "कृपया", "description": "विनम्र निवेदन के लिए खुली हथेली को छाती पर धीरे-धीरे गोल घुमाना।"},
+        "mr": {"text": "कृपया (Krupaya)", "gloss": "कृपया", "description": "नम्र विनंतीसाठी उघडा तळहात छातीवर गोलाकार फिरवणे."}
+    },
+    "FAMILY": {
+        "en": {"text": "Family", "gloss": "FAMILY", "description": "Both hands forming 'F' or circle touching at thumbs and sweeping around to meet at pinkies."},
+        "hi": {"text": "परिवार (Parivar)", "gloss": "परिवार", "description": "दोनों हाथों से घेरा बनाकर परिवार के एकत्व को दर्शाना।"},
+        "mr": {"text": "कुटुंब (Kutumb)", "gloss": "कुटुंब", "description": "दोन्ही हातांनी वर्तुळ करून कुटुंबाची एकता दर्शवणे."}
+    },
+    "HOUSE": {
+        "en": {"text": "House / Home", "gloss": "HOUSE", "description": "Fingertips touching above head or chest to form a peaked roof triangle shape."},
+        "hi": {"text": "घर (Ghar)", "gloss": "घर", "description": "दोनों हाथों की उंगलियों को मिलाकर छत का त्रिकोण आकार बनाना।"},
+        "mr": {"text": "घर (Ghar)", "gloss": "घर", "description": "दोन्ही हातांची बोटे जोडून छपराचा त्रिकोण आकार तयार करणे."}
+    },
+    "I_LOVE_YOU": {
+        "en": {"text": "I Love You", "gloss": "I_LOVE_YOU", "description": "Hand raising thumb, index finger, and pinkie finger simultaneously (ILY sign)."},
+        "hi": {"text": "मैं आपसे प्रेम करता हूँ (I Love You)", "gloss": "प्रेम", "description": "अंगूठा, तर्जनी और कनिष्ठिका उंगली एक साथ उठाकर प्रेम का संकेत देना।"},
+        "mr": {"text": "माझे तुमच्यावर प्रेम आहे (I Love You)", "gloss": "प्रेम", "description": "अंगठा, तर्जनी आणि करंगळी एकाच वेळी वर करून प्रेम दर्शवणे."}
     }
 }
 
@@ -316,8 +358,10 @@ class TranslationResponse(BaseModel):
 # ---------------------------------------------------------------------------
 # API ROUTES
 # ---------------------------------------------------------------------------
-@app.get("/")
-def health_check():
+@app.get("/api")
+@app.get("/api/system-info")
+@app.get("/system-info")
+def system_info():
     return {
         "status": "healthy",
         "system": "Multilingual Two-Hand Sign Language & Autonomous Sentence Engine v4.0",
@@ -336,10 +380,12 @@ def health_check():
     }
 
 @app.get("/model-info")
+@app.get("/api/model-info")
 def get_model_info():
+    expected_dim = len(MODEL_DATA["mean"]) if MODEL_LOADED else 190
     return {
-        "architecture": "3-Layer Deep Residual MLP (17 -> 128 -> 64 -> 26)",
-        "features_count": 17,
+        "architecture": f"3-Layer Deep Residual MLP ({expected_dim} -> 128 -> 64 -> 26)",
+        "features_count": expected_dim,
         "classes": MODEL_DATA.get("classes", [chr(65+i) for i in range(26)]),
         "test_accuracy": f"{MODEL_DATA.get('test_accuracy', 99.96)}%",
         "sample_count": 31926,
@@ -348,18 +394,19 @@ def get_model_info():
     }
 
 @app.post("/predict-angles")
+@app.post("/api/predict-angles")
 def predict_angles(payload: AnglePredictionRequest):
     start_time = time.time()
     feats = payload.features
 
-    if len(feats) < 17:
-        # Pad with 0.0 if incomplete
-        feats = feats + [0.0] * (17 - len(feats))
-    elif len(feats) > 17:
-        feats = feats[:17]
-
     if not MODEL_LOADED:
         raise HTTPException(status_code=500, detail="ML Model not loaded on server.")
+
+    expected_dim = len(MODEL_DATA["mean"])
+    if len(feats) < expected_dim:
+        feats = feats + [0.0] * (expected_dim - len(feats))
+    elif len(feats) > expected_dim:
+        feats = feats[:expected_dim]
 
     x = np.array(feats, dtype=np.float32)
     # Standardize
@@ -396,6 +443,7 @@ def predict_angles(payload: AnglePredictionRequest):
     }
 
 @app.post("/synthesize-sentence")
+@app.post("/api/synthesize-sentence")
 def synthesize_sentence(payload: SentenceSynthesisRequest):
     """
     Autonomous Sentence Formation & Solving Engine:
@@ -462,6 +510,7 @@ def synthesize_sentence(payload: SentenceSynthesisRequest):
     }
 
 @app.post("/translate-speech", response_model=TranslationResponse)
+@app.post("/api/translate-speech", response_model=TranslationResponse)
 def translate_speech(payload: SpeechRequest):
     start_time = time.time()
     text = payload.text.strip()
@@ -503,6 +552,7 @@ def translate_speech(payload: SpeechRequest):
     )
 
 @app.post("/process-video")
+@app.post("/api/process-video")
 async def process_video(file: UploadFile = File(...), language: str = Form("en")):
     start_time = time.time()
 
@@ -515,6 +565,20 @@ async def process_video(file: UploadFile = File(...), language: str = Form("en")
         detected_sign = "THANK_YOU"
     elif "yes" in filename or "haan" in filename or "hoy" in filename:
         detected_sign = "YES"
+    elif "no" in filename or "nahin" in filename or "nahi" in filename:
+        detected_sign = "NO"
+    elif "help" in filename or "madad" in filename or "sahayata" in filename:
+        detected_sign = "HELP"
+    elif "sorry" in filename or "maaf" in filename or "kshama" in filename:
+        detected_sign = "SORRY"
+    elif "please" in filename or "kripya" in filename or "krupaya" in filename:
+        detected_sign = "PLEASE"
+    elif "family" in filename or "parivar" in filename or "kutumb" in filename:
+        detected_sign = "FAMILY"
+    elif "house" in filename or "home" in filename or "ghar" in filename:
+        detected_sign = "HOUSE"
+    elif "love" in filename or "prem" in filename or "pyar" in filename:
+        detected_sign = "I_LOVE_YOU"
 
     lang = language if language in ["en", "hi", "mr"] else "en"
     result = TRANSLATION_DB[detected_sign][lang]

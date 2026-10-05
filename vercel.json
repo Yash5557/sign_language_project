@@ -4,6 +4,30 @@
   "outputDirectory": "frontend/dist",
   "rewrites": [
     {
+      "source": "/api/(.*)",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/process-video",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/predict-angles",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/synthesize-sentence",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/health",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/model-info",
+      "destination": "/api/index.py"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

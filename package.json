@@ -5,7 +5,12 @@
   "description": "Helping Hand AI - Multilingual Sign Language Translation Studio",
   "scripts": {
     "build": "npm --prefix frontend install --include=dev && npm --prefix frontend run build",
-    "start": "npm --prefix frontend run preview"
+    "start": "npm --prefix frontend run preview",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "python -m uvicorn backend.main:app --reload --port 8000",
+    "dev": "npx concurrently -k \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "backend": "python -m uvicorn backend.main:app --reload --port 8000",
+    "serve": "python -m uvicorn backend.main:app --port 8000"
   },
   "allowScripts": {
     "esbuild": true
