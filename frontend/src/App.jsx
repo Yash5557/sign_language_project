@@ -18,11 +18,13 @@ import {
   SparklesIcon
 } from "./components/Icons";
 import helpingHandEmblem from "./assets/helping-hand-emblem.png";
+import BackendModal, { BackendStatusBadge } from "./components/BackendModal";
 
 function AppContent() {
   const [currentMode, setCurrentMode] = useState("welcome"); // "welcome" | "camera" | "speech" | "video" | "dictionary"
   const [currentLang, setCurrentLang] = useState("en"); // "en" | "hi" | "mr"
   const [cameraPermissionStatus, setCameraPermissionStatus] = useState("prompt"); // "prompt" | "granted" | "denied"
+  const [isBackendModalOpen, setIsBackendModalOpen] = useState(false);
   const { currentTheme } = useTheme();
 
   // Trigger browser camera access request safely
@@ -152,6 +154,9 @@ function AppContent() {
 
         {/* Right Actions: Segmented Language Switcher & Navigation Tabs */}
         <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap" }}>
+
+          {/* Backend Status & In-Browser Engine Badge */}
+          <BackendStatusBadge onOpenModal={() => setIsBackendModalOpen(true)} />
 
           {/* Segmented Language Switcher */}
           <div className="lang-segmented-pill" role="group" aria-label="Select Language">
@@ -364,6 +369,12 @@ function AppContent() {
           <DictionaryScreen currentLang={currentLang} onSelectMode={(mode) => setCurrentMode(mode)} />
         )}
       </main>
+
+      {/* Backend & In-Browser Engine Configuration Modal */}
+      <BackendModal
+        isOpen={isBackendModalOpen}
+        onClose={() => setIsBackendModalOpen(false)}
+      />
     </div>
   );
 }
