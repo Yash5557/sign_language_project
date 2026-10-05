@@ -1,5 +1,6 @@
 {
-  "buildCommand": "cd frontend && npm install && chmod -R +x node_modules/.bin 2>/dev/null || true && npm run build",
+  "installCommand": "npm --prefix frontend install --include=dev",
+  "buildCommand": "npm --prefix frontend run build",
   "outputDirectory": "frontend/dist",
   "rewrites": [
     {

@@ -1,5 +1,6 @@
 {
-  "buildCommand": "chmod -R +x node_modules/.bin 2>/dev/null || true && vite build",
+  "installCommand": "npm install --include=dev",
+  "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
     {
